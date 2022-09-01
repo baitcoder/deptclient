@@ -1,0 +1,27 @@
+<h2>Adding New Department</h2>
+<form (ngSubmit)="saveDept(deptdata)" #deptForm="ngForm">
+    <div>
+        <label for="id">Enter Id:</label>
+        <input type="number" id="id" name="id" required [(ngModel)]="deptdata.id" #id="ngModel"/>
+        <div *ngIf="id.invalid && (id.dirty||id.touched)" style="color: red;">
+            <div *ngIf="id.errors?.['required']">
+                Id Cannot Be Blank
+            </div>
+        </div>
+    </div>
+    <div>
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="deptdata.name" required #name="ngModel"/>
+        <div *ngIf="name.invalid && (name.dirty||name.touched)" style="color: red;">
+        <div *ngIf="name.errors?.['required']">
+            Name is required
+        </div>
+        </div>
+    </div>
+    <div>
+        <label for="location">Enter Location:</label>
+        <input type="text" id="location" name="location" [(ngModel)]="deptdata.location" #location="ngModel"/>
+    </div>
+    <br><br>
+    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid"/>
+</form>

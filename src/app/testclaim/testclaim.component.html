@@ -1,0 +1,26 @@
+<p>testclaim works!</p>
+
+<div class="container">
+    <h4 class="text-success">Show Department Info</h4>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Claim Id</th>
+                    <th>Claim Date</th>
+                    <th>Amount</th>
+                    <th>Approval Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claim of claimList">
+                    <td>{{claim.claimNo}}</td>
+                    <td>{{claim.claimDate}}</td>
+                    <td>{{claim.amount}}</td>
+                    <td>{{claim.approveStatus}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

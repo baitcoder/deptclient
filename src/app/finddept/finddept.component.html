@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2>Details of Department =>> {{deptdata.name}}</h2>
+        <hr>
+        <div style="background-color:rgb(220, 220, 220);">
+            <h6>Id : {{deptdata.id}}</h6>
+            <h6>Name : {{deptdata.name}}</h6>
+            <h6>Location : {{deptdata.location}}</h6>
+        </div>
+    </div>
+    <a [routerLink]="['/list']">Back to List</a>
+</div>
